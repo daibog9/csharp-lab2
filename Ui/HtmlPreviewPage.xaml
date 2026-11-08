@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:Ui.ViewModels"
+             x:Class="Ui.HtmlPreviewPage"
+             x:DataType="vm:HtmlPreviewViewModel"
+             Title="HTML-звіт">
+
+    <Grid Padding="16" RowDefinitions="Auto,*" RowSpacing="12"
+          BackgroundColor="{AppThemeBinding Light=#F4F5F9, Dark=#15161C}">
+
+        <Grid ColumnDefinitions="*,Auto" ColumnSpacing="12">
+            <VerticalStackLayout Spacing="2" VerticalOptions="Center">
+                <Label Text="{Binding Caption}" FontSize="17" FontAttributes="Bold" />
+                <Label Text="{Binding FilePath}" FontSize="12" LineBreakMode="MiddleTruncation"
+                       TextColor="{AppThemeBinding Light=#6B7085, Dark=#9DA2B5}" />
+            </VerticalStackLayout>
+            <HorizontalStackLayout Grid.Column="1" Spacing="8" VerticalOptions="Center">
+                <Button Text="Відкрити в браузері" Command="{Binding OpenInBrowserCommand}" />
+                <Button Text="Копіювати шлях" Command="{Binding CopyPathCommand}" />
+                <Button Text="Закрити" Command="{Binding CloseCommand}" />
+            </HorizontalStackLayout>
+        </Grid>
+
+        <Border Grid.Row="1" Padding="0" StrokeShape="RoundRectangle 10" StrokeThickness="1"
+                Stroke="{AppThemeBinding Light=#DADDE7, Dark=#3A3D4A}">
+            <WebView Source="{Binding Source}" />
+        </Border>
+    </Grid>
+</ContentPage>

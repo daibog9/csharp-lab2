@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:Ui.ViewModels"
+             x:Class="Ui.MainPage"
+             x:DataType="vm:MainViewModel"
+             Title="Студентський парламент">
+
+    <ContentPage.Resources>
+        <Style x:Key="Caption" TargetType="Label">
+            <Setter Property="FontSize" Value="12" />
+            <Setter Property="FontAttributes" Value="Bold" />
+            <Setter Property="TextColor" Value="{AppThemeBinding Light=#5A5F73, Dark=#A9AEC2}" />
+            <Setter Property="Margin" Value="0,12,0,4" />
+        </Style>
+        <Style x:Key="Muted" TargetType="Label">
+            <Setter Property="FontSize" Value="13" />
+            <Setter Property="TextColor" Value="{AppThemeBinding Light=#6B7085, Dark=#9DA2B5}" />
+        </Style>
+        <Style x:Key="Panel" TargetType="Border">
+            <Setter Property="StrokeShape" Value="RoundRectangle 12" />
+            <Setter Property="StrokeThickness" Value="1" />
+            <Setter Property="Stroke" Value="{AppThemeBinding Light=#DADDE7, Dark=#3A3D4A}" />
+            <Setter Property="BackgroundColor" Value="{AppThemeBinding Light=#FFFFFF, Dark=#1F2129}" />
+        </Style>
+        <Style x:Key="SecondaryButton" TargetType="Button">
+            <Setter Property="BackgroundColor" Value="{AppThemeBinding Light=#E6E8F0, Dark=#343847}" />
+            <Setter Property="TextColor" Value="{AppThemeBinding Light=#1D2033, Dark=#E8EAF2}" />
+        </Style>
+    </ContentPage.Resources>
+
+    <Grid Padding="20" RowDefinitions="Auto,*" ColumnDefinitions="380,*" ColumnSpacing="16" RowSpacing="14"
+          BackgroundColor="{AppThemeBinding Light=#F4F5F9, Dark=#15161C}">
+
+        <Grid Grid.ColumnSpan="2" ColumnDefinitions="*,Auto" ColumnSpacing="12">
+            <VerticalStackLayout Spacing="3" VerticalOptions="Center">
+                <Label Text="Студентський парламент · аналіз XML" FontSize="22" FontAttributes="Bold" />
+                <Label Text="{Binding FileSummary}" Style="{StaticResource Muted}" />
+                <Label Text="{Binding XslInfo}" Style="{StaticResource Muted}" FontSize="12" />
+            </VerticalStackLayout>
+            <HorizontalStackLayout Grid.Column="1" Spacing="8" VerticalOptions="Center">
+                <Button Text="Відкрити XML…" Command="{Binding OpenXmlCommand}" />
+                <Button Text="Файл-приклад" Command="{Binding OpenSampleCommand}" Style="{StaticResource SecondaryButton}" />
+                <Button Text="Обрати XSL…" Command="{Binding OpenXslCommand}" Style="{StaticResource SecondaryButton}" />
+                <Button Text="Протокол" Command="{Binding ShowLogCommand}" Style="{StaticResource SecondaryButton}" />
+            </HorizontalStackLayout>
+        </Grid>
+
+        <Border Grid.Row="1" Style="{StaticResource Panel}">
+            <ScrollView>
+                <VerticalStackLayout Padding="16,6,16,16" Spacing="0">
+
+                    <Label Text="Спосіб аналізу (стратегія)" Style="{StaticResource Caption}" />
+                    <Picker ItemsSource="{Binding StrategyOptions}"
+                            SelectedItem="{Binding SelectedStrategy}"
+                            IsEnabled="{Binding IsIdle}" />
+
+                    <Label Text="Факультет (департамент, відділення)" Style="{StaticResource Caption}" />
+                    <Picker ItemsSource="{Binding Faculties}"
+                            SelectedItem="{Binding SelectedFaculty}"
+                            IsEnabled="{Binding CanEditFilters}" />
+
+                    <Label Text="Кафедра" Style="{StaticResource Caption}" />
+                    <Picker ItemsSource="{Binding Departments}"
+                            SelectedItem="{Binding SelectedDepartment}"
+                            IsEnabled="{Binding CanEditFilters}" />
+
+                    <Label Text="Спеціальність" Style="{StaticResource Caption}" />
+                    <Picker ItemsSource="{Binding Specialties}"
+                            SelectedItem="{Binding SelectedSpecialty}"
+                            IsEnabled="{Binding CanEditFilters}" />
+
+                    <Label Text="Посада в парламенті" Style="{StaticResource Caption}" />
+                    <Picker ItemsSource="{Binding Positions}"
+                            SelectedItem="{Binding SelectedPosition}"
+                            IsEnabled="{Binding CanEditFilters}" />
+
+                    <Label Text="Вид заходу" Style="{StaticResource Caption}" />
+                    <Picker ItemsSource="{Binding EventTypes}"
+                            SelectedItem="{Binding SelectedEventType}"
+                            IsEnabled="{Binding CanEditFilters}" />
+
+                    <Label Text="Часові рамки заходу" Style="{StaticResource Caption}" />
+                    <HorizontalStackLayout Spacing="4">
+                        <CheckBox IsChecked="{Binding UseDateRange}" IsEnabled="{Binding CanEditFilters}" VerticalOptions="Center" />
+                        <Label Text="враховувати проміжок дат" VerticalOptions="Center" />
+                    </HorizontalStackLayout>
+                    <Grid ColumnDefinitions="Auto,*,Auto,*" ColumnSpacing="6">
+                        <Label Text="з" VerticalOptions="Center" />
+                        <DatePicker Grid.Column="1" Date="{Binding DateFrom}" Format="dd.MM.yyyy" IsEnabled="{Binding UseDateRange}" />
+                        <Label Grid.Column="2" Text="по" VerticalOptions="Center" />
+                        <DatePicker Grid.Column="3" Date="{Binding DateTo}" Format="dd.MM.yyyy" IsEnabled="{Binding UseDateRange}" />
+                    </Grid>
+
+                    <Label Text="Ключові слова" Style="{StaticResource Caption}" />
+                    <Entry Text="{Binding Keywords}"
+                           Placeholder="прізвище, назва заходу, місце…"
+                           ReturnCommand="{Binding SearchCommand}"
+                           ClearButtonVisibility="WhileEditing"
+                           IsEnabled="{Binding CanEditFilters}" />
+
+                    <Grid ColumnDefinitions="*,*" RowDefinitions="Auto,Auto" ColumnSpacing="8" RowSpacing="8" Margin="0,20,0,0">
+                        <Button Text="Пошук" Command="{Binding SearchCommand}" />
+                        <Button Grid.Column="1" Text="У HTML (XSL)" Command="{Binding TransformCommand}" />
+                        <Button Grid.Row="1" Text="Clear" Command="{Binding ClearCommand}" Style="{StaticResource SecondaryButton}" />
+                        <Button Grid.Row="1" Grid.Column="1" Text="Вихід" Command="{Binding ExitCommand}" Style="{StaticResource SecondaryButton}" />
+                    </Grid>
+
+                    <Label Text="Google Drive" Style="{StaticResource Caption}" Margin="0,24,0,2" />
+                    <Label Text="{Binding DriveStatus}" Style="{StaticResource Muted}" FontSize="12" />
+                    <Grid ColumnDefinitions="*,*" RowDefinitions="Auto,Auto,Auto" ColumnSpacing="8" RowSpacing="8" Margin="0,8,0,0">
+                        <Button Text="XML з Drive…" Command="{Binding OpenXmlFromDriveCommand}" Style="{StaticResource SecondaryButton}" />
+                        <Button Grid.Column="1" Text="XSL з Drive…" Command="{Binding OpenXslFromDriveCommand}" Style="{StaticResource SecondaryButton}" />
+                        <Button Grid.Row="1" Text="Фрагмент → XML" Command="{Binding ExportXmlToDriveCommand}" />
+                        <Button Grid.Row="1" Grid.Column="1" Text="Фрагмент → HTML" Command="{Binding ExportHtmlToDriveCommand}" />
+                        <Button Grid.Row="2" Grid.ColumnSpan="2" Text="Зберегти вихідні XML і XSL"
+                                Command="{Binding SaveSourcesToDriveCommand}" Style="{StaticResource SecondaryButton}" />
+                    </Grid>
+
+                </VerticalStackLayout>
+            </ScrollView>
+        </Border>
+
+        <Border Grid.Row="1" Grid.Column="1" Style="{StaticResource Panel}" Padding="16">
+            <Grid RowDefinitions="Auto,Auto,Auto,*" RowSpacing="8">
+
+                <HorizontalStackLayout Spacing="8">
+                    <ActivityIndicator IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}"
+                                       WidthRequest="18" HeightRequest="18" VerticalOptions="Center" />
+                    <Label Text="{Binding StatusText}" FontSize="15" FontAttributes="Bold" VerticalOptions="Center" />
+                </HorizontalStackLayout>
+
+                <Label Grid.Row="1" Text="{Binding CriteriaText}" Style="{StaticResource Muted}" IsVisible="{Binding HasQuery}" />
+
+                <Border Grid.Row="2" IsVisible="{Binding HasQuery}" Padding="10,8" StrokeThickness="0"
+                        StrokeShape="RoundRectangle 8"
+                        BackgroundColor="{AppThemeBinding Light=#F0F2F8, Dark=#2A2D38}">
+                    <VerticalStackLayout Spacing="4">
+                        <Label Text="Динамічно згенерований запит" FontSize="11" FontAttributes="Bold" Style="{StaticResource Muted}" />
+                        <Label Text="{Binding QueryText}" FontSize="12" LineBreakMode="WordWrap"
+                               FontFamily="{OnPlatform MacCatalyst=Menlo, WinUI=Consolas, Default=monospace}" />
+                    </VerticalStackLayout>
+                </Border>
+
+                <CollectionView Grid.Row="3" ItemsSource="{Binding Results}" SelectionMode="None" EmptyView="{Binding EmptyText}">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate x:DataType="vm:MemberCardViewModel">
+                            <Border Margin="0,0,0,10" Padding="14,10" StrokeShape="RoundRectangle 10" StrokeThickness="1"
+                                    Stroke="{AppThemeBinding Light=#E1E4EC, Dark=#3A3D4A}"
+                                    BackgroundColor="{AppThemeBinding Light=#FAFBFD, Dark=#24262F}">
+                                <VerticalStackLayout Spacing="4">
+                                    <Label Text="{Binding Title}" FontSize="16" FontAttributes="Bold" />
+                                    <Label Text="{Binding Subtitle}" FontSize="13" />
+                                    <Label Text="{Binding Details}" FontSize="12" Style="{StaticResource Muted}" />
+                                    <Label Text="{Binding EventsText}" FontSize="13" Margin="0,4,0,0" />
+                                </VerticalStackLayout>
+                            </Border>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+
+            </Grid>
+        </Border>
+    </Grid>
+</ContentPage>

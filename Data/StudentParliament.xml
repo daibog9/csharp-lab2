@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="StudentParliament.xsl"?>
+<StudentParliament university="Київський національний університет імені Тараса Шевченка" academicYear="2026/2027">
+
+  <Member id="m01" faculty="Факультет комп'ютерних наук та кібернетики" department="Кафедра теорії та технології програмування" specialty="121 Інженерія програмного забезпечення" course="4" group="ІПЗ-41" position="Голова парламенту" email="o.kovalenko@student.example.ua">
+    <FullName>
+      <LastName>Коваленко</LastName>
+      <FirstName>Олена</FirstName>
+      <Patronymic>Іванівна</Patronymic>
+    </FullName>
+    <Event type="Засідання" format="офлайн">
+      <Title>Перше засідання парламенту нового скликання</Title>
+      <Start>2026-09-10T15:00:00</Start>
+      <End>2026-09-10T17:00:00</End>
+      <Location>Головний корпус, ауд. 101</Location>
+    </Event>
+    <Event type="Конференція" format="змішаний">
+      <Title>Студентське самоврядування в умовах воєнного стану</Title>
+      <Start>2026-11-20T10:00:00</Start>
+      <End>2026-11-21T17:00:00</End>
+      <Location>Червоний корпус, Актова зала</Location>
+    </Event>
+  </Member>
+
+  <Member id="m02" faculty="Факультет комп'ютерних наук та кібернетики" department="Кафедра інтелектуальних програмних систем" specialty="122 Комп'ютерні науки" course="3" position="Заступник голови">
+    <FullName>
+      <LastName>Шевчук</LastName>
+      <FirstName>Андрій</FirstName>
+      <Patronymic>Миколайович</Patronymic>
+    </FullName>
+    <Event type="Хакатон" format="офлайн">
+      <Title>KNU Hack: цифрові сервіси для студентів</Title>
+      <Start>2026-10-17T09:00:00</Start>
+      <End>2026-10-18T21:00:00</End>
+      <Location>Корпус ФКНК, ауд. 40</Location>
+    </Event>
+    <Event type="Засідання">
+      <Title>Звіт про роботу парламенту за перший семестр</Title>
+      <Start>2026-12-17T15:00:00</Start>
+      <End>2026-12-17T17:30:00</End>
+    </Event>
+  </Member>
+
+  <Member id="m03" faculty="Економічний факультет" department="Кафедра економічної кібернетики" specialty="051 Економіка" course="2" group="ЕК-21">
+    <FullName>
+      <LastName>Бондаренко</LastName>
+      <FirstName>Марія</FirstName>
+      <Patronymic>Олегівна</Patronymic>
+    </FullName>
+    <Event type="Тренінг" format="онлайн">
+      <Title>Фінансова грамотність для першокурсників</Title>
+      <Start>2026-10-02T14:00:00</Start>
+      <End>2026-10-02T16:00:00</End>
+      <Location>Zoom</Location>
+    </Event>
+  </Member>
+
+  <Member id="m04" faculty="Юридичний факультет" department="Кафедра конституційного права" specialty="081 Право" position="Голова виборчої комісії" email="d.tkachenko@student.example.ua">
+    <FullName>
+      <LastName>Ткаченко</LastName>
+      <FirstName>Дмитро</FirstName>
+      <Patronymic>Сергійович</Patronymic>
+    </FullName>
+    <Event type="Вибори" format="офлайн">
+      <Title>Вибори голів студентських рад факультетів</Title>
+      <Start>2026-09-28T09:00:00</Start>
+      <End>2026-09-30T18:00:00</End>
+      <Location>Усі корпуси університету</Location>
+    </Event>
+    <Event type="Засідання" format="онлайн">
+      <Title>Затвердження результатів виборів</Title>
+      <Start>2026-10-01T16:00:00</Start>
+      <End>2026-10-01T17:00:00</End>
+      <Location>Google Meet</Location>
+    </Event>
+  </Member>
+
+  <Member id="m05" faculty="Інститут журналістики" department="Кафедра мультимедійних технологій і медіадизайну" specialty="061 Журналістика" course="3" position="Голова комітету з культури">
+    <FullName>
+      <LastName>Мельник</LastName>
+      <FirstName>Софія</FirstName>
+      <Patronymic>Андріївна</Patronymic>
+    </FullName>
+    <Event type="Культурний захід" format="офлайн">
+      <Title>Вечір української поезії</Title>
+      <Start>2026-11-14T18:00:00</Start>
+      <End>2026-11-14T20:30:00</End>
+      <Location>Червоний корпус, Актова зала</Location>
+    </Event>
+    <Event type="Волонтерська акція">
+      <Title>Збір коштів на підтримку ЗСУ</Title>
+      <Start>2026-12-01T09:00:00</Start>
+      <End>2026-12-15T18:00:00</End>
+    </Event>
+    <Event type="Культурний захід" format="офлайн">
+      <Title>Різдвяний ярмарок</Title>
+      <Start>2026-12-20T11:00:00</Start>
+      <End>2026-12-20T19:00:00</End>
+      <Location>Площа перед Червоним корпусом</Location>
+    </Event>
+  </Member>
+
+  <Member id="m06" faculty="Факультет комп'ютерних наук та кібернетики" department="Кафедра обчислювальної математики" specialty="113 Прикладна математика" course="1">
+    <FullName>
+      <LastName>Кравченко</LastName>
+      <FirstName>Тарас</FirstName>
+      <Patronymic>Володимирович</Patronymic>
+    </FullName>
+    <Event type="Спортивний захід">
+      <Title>Кубок факультетів з футзалу</Title>
+      <Start>2026-10-24T10:00:00</Start>
+      <End>2026-10-24T18:00:00</End>
+      <Location>Спорткомплекс університету</Location>
+    </Event>
+  </Member>
+
+  <Member id="m07" faculty="Інститут міжнародних відносин" department="Кафедра міжнародних організацій і дипломатичної служби" specialty="291 Міжнародні відносини, суспільні комунікації та регіональні студії" course="4" group="МВ-41" position="Секретар" email="i.oliinyk@student.example.ua">
+    <FullName>
+      <LastName>Олійник</LastName>
+      <FirstName>Ірина</FirstName>
+      <Patronymic>Петрівна</Patronymic>
+    </FullName>
+    <Event type="Засідання" format="змішаний">
+      <Title>Засідання з питань академічної мобільності</Title>
+      <Start>2026-10-08T15:00:00</Start>
+      <End>2026-10-08T16:30:00</End>
+      <Location>Інститут міжнародних відносин, ауд. 212</Location>
+    </Event>
+    <Event type="Конференція" format="офлайн">
+      <Title>Молодіжна дипломатія: досвід Erasmus+</Title>
+      <Start>2027-03-12T10:00:00</Start>
+      <End>2027-03-12T16:00:00</End>
+      <Location>Інститут міжнародних відносин, конференц-зала</Location>
+    </Event>
+  </Member>
+
+  <Member id="m08" faculty="Факультет комп'ютерних наук та кібернетики" department="Кафедра інтелектуальних програмних систем" specialty="122 Комп'ютерні науки" course="2">
+    <FullName>
+      <LastName>Кім</LastName>
+      <FirstName>Мінджун</FirstName>
+    </FullName>
+    <Event type="Хакатон" format="офлайн">
+      <Title>KNU Hack: цифрові сервіси для студентів</Title>
+      <Start>2026-10-17T09:00:00</Start>
+      <End>2026-10-18T21:00:00</End>
+      <Location>Корпус ФКНК, ауд. 40</Location>
+    </Event>
+  </Member>
+
+  <Member id="m09" faculty="Відділення комп'ютерних технологій фахового коледжу" specialty="121 Інженерія програмного забезпечення" course="2" group="П-22">
+    <FullName>
+      <LastName>Савченко</LastName>
+      <FirstName>Анастасія</FirstName>
+      <Patronymic>Ігорівна</Patronymic>
+    </FullName>
+    <Event type="Тренінг" format="офлайн">
+      <Title>Основи публічних виступів</Title>
+      <Start>2026-11-05T13:00:00</Start>
+      <End>2026-11-05T15:00:00</End>
+      <Location>Коледж, ауд. 3</Location>
+    </Event>
+    <Event type="Волонтерська акція">
+      <Title>Прибирання парку «Нивки»</Title>
+      <Start>2027-04-18T10:00:00</Start>
+      <End>2027-04-18T14:00:00</End>
+      <Location>Парк «Нивки»</Location>
+    </Event>
+  </Member>
+
+  <Member id="m10" faculty="Економічний факультет" department="Кафедра фінансів" specialty="072 Фінанси, банківська справа та страхування" position="Голова комітету з освіти">
+    <FullName>
+      <LastName>Поліщук</LastName>
+      <FirstName>Владислав</FirstName>
+      <Patronymic>Олександрович</Patronymic>
+    </FullName>
+    <Event type="Засідання" format="онлайн">
+      <Title>Комітет з освіти: якість викладання</Title>
+      <Start>2026-11-12T16:00:00</Start>
+      <End>2026-11-12T17:30:00</End>
+      <Location>Microsoft Teams</Location>
+    </Event>
+    <Event type="Тренінг">
+      <Title>Як читати силабус і захищати свої права</Title>
+      <Start>2027-02-10T14:00:00</Start>
+      <End>2027-02-10T15:30:00</End>
+    </Event>
+  </Member>
+
+  <Member id="m11" faculty="Юридичний факультет" department="Кафедра цивільного права" specialty="081 Право" course="3" group="ПР-31" email="y.hnatiuk@student.example.ua">
+    <FullName>
+      <LastName>Гнатюк</LastName>
+      <FirstName>Юлія</FirstName>
+      <Patronymic>Романівна</Patronymic>
+    </FullName>
+    <Event type="Конференція" format="змішаний">
+      <Title>Студентське самоврядування в умовах воєнного стану</Title>
+      <Start>2026-11-20T10:00:00</Start>
+      <End>2026-11-21T17:00:00</End>
+      <Location>Червоний корпус, Актова зала</Location>
+    </Event>
+  </Member>
+
+  <Member id="m12" faculty="Факультет комп'ютерних наук та кібернетики" department="Кафедра теорії та технології програмування" specialty="121 Інженерія програмного забезпечення" course="2" group="К-24" position="Член комітету з волонтерства">
+    <FullName>
+      <LastName>Литвиненко</LastName>
+      <FirstName>Богдан</FirstName>
+      <Patronymic>Юрійович</Patronymic>
+    </FullName>
+    <Event type="Волонтерська акція">
+      <Title>Збір коштів на підтримку ЗСУ</Title>
+      <Start>2026-12-01T09:00:00</Start>
+      <End>2026-12-15T18:00:00</End>
+    </Event>
+    <Event type="Спортивний захід" format="офлайн">
+      <Title>Університетський забіг «Крок»</Title>
+      <Start>2027-05-16T09:00:00</Start>
+      <End>2027-05-16T13:00:00</End>
+      <Location>Ботанічний сад імені Фоміна</Location>
+    </Event>
+  </Member>
+
+  <Member id="m13" faculty="Інститут журналістики" department="Кафедра мультимедійних технологій і медіадизайну" specialty="061 Журналістика" course="1">
+    <FullName>
+      <LastName>Руденко</LastName>
+      <FirstName>Катерина</FirstName>
+      <Patronymic>Василівна</Patronymic>
+    </FullName>
+    <Event type="Культурний захід" format="офлайн">
+      <Title>Вечір української поезії</Title>
+      <Start>2026-11-14T18:00:00</Start>
+      <End>2026-11-14T20:30:00</End>
+      <Location>Червоний корпус, Актова зала</Location>
+    </Event>
+  </Member>
+
+  <Member id="m14" faculty="Інститут міжнародних відносин" department="Кафедра міжнародних організацій і дипломатичної служби" specialty="291 Міжнародні відносини, суспільні комунікації та регіональні студії" course="5" position="Заступник голови">
+    <FullName>
+      <LastName>Зінченко</LastName>
+      <FirstName>Максим</FirstName>
+      <Patronymic>Анатолійович</Patronymic>
+    </FullName>
+    <Event type="Конференція" format="офлайн">
+      <Title>Форум студентських ініціатив</Title>
+      <Start>2027-04-02T10:00:00</Start>
+      <End>2027-04-02T18:00:00</End>
+      <Location>Головний корпус, Велика фізична аудиторія</Location>
+    </Event>
+  </Member>
+
+</StudentParliament>
